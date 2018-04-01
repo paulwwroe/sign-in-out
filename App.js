@@ -7,6 +7,8 @@ import { StackNavigator } from 'react-navigation';
 import SignIn from './screens/SignIn';
 import SignOut from './screens/SignOut';
 import HomeScreen from './screens/HomeScreen';
+import Selfie from './screens/Selfie';
+import Barcode from './screens/Barcode';
 
 const AppNavigation = StackNavigator({
   Home: {
@@ -18,18 +20,24 @@ const AppNavigation = StackNavigator({
   SignOut: {
     screen: SignOut
   },
+  Selfie: {
+    screen: Selfie
+  },
+  Barcode: {
+    screen: Barcode
+  },
 });
 
 export default class App extends React.Component {
 
+  componentDidMount() {
+    StatusBar.setHidden(true);
+  }
+
   render() {
 
     return (
-      <AppNavigation>
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        </View>
-      </AppNavigation>
+      <AppNavigation />
     );
 
   }
