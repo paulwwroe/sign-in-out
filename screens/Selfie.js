@@ -35,12 +35,17 @@ export default class Selfie extends Component {
   }
 
   takePicture = async () => {
+    
     const { navigate }  = this.props.navigation;
+    
     if (this.camera) {
       this.camera.takePictureAsync({base64:true}).then(data => {    
-        navigate('SignIn', {base64: data.base64});
+        navigate('SignIn', {
+          base64: data.base64
+        });
       });
     }
+    
   };
 
   renderCamera() {

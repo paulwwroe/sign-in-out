@@ -30,7 +30,7 @@ const AppNavigation = StackNavigator({
 
 export default class App extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     StatusBar.setHidden(true);
   }
 
